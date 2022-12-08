@@ -2,6 +2,9 @@
 
 /**
  * main - entry point of the program
+ * @void: takes no argument
+ *
+ * Return: returns zero on successful execution
  */
 
 int main(void)
