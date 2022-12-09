@@ -18,5 +18,6 @@ int main(void)
 		putchar(counter);
 		counter++;
 	}
+	putchar('\n');
 	return (0);
 }
