@@ -19,6 +19,6 @@ int print_sign(int c)
 		_putchar('-');
 		return (-1);
 	}
-	_putchar('48');
+	_putchar(48);
 	return (0);
 }
