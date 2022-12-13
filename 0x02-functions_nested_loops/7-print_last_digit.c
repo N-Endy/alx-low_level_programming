@@ -14,6 +14,6 @@ int print_last_digit(int num)
 	if (num < 0)
 		num *= -1;
 	while (num > 10)
-		res = num % 10
-	return res
+		res = num % 10;
+	return res;
 }
