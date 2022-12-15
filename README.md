@@ -1,3 +1,3 @@
-# More Functions And Nested Loops
+# Low Level Programming
 
-This project shows more examples on knowledge of functions and nested loop in the C Language.
+This contains projects of various topics in the C Language. This projects show knowledge in the various concepts of C Language.
