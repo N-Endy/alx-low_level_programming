@@ -1,3 +1,3 @@
-# Low Level Programming; C Language
+# More Functions And Nested Loops
 
-This repo shows first intorduction to the C programming Language. It shows some basic C projects to show knowledge of some basic concepts in the C Language
+This project shows more examples on knowledge of functions and nested loop in the C Language.
