@@ -20,6 +20,6 @@ void rev_string(char *s)
 	}
 
 	/* Use length to print starting from back */
-	for (j = count - 1; j >= 0; j--)
+	for (j = ((count - 1) / 2); j >= 0; j--)
 		_putchar(s[j]);
 }
