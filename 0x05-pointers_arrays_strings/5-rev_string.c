@@ -20,11 +20,11 @@ void rev_string(char *s)
 		i++;
 	}
 
-	/* Use half of its length to print starting from back */
+	/* Use length to print starting from back */
 	for (j = 0; j <= (count - 1) / 2; j++)
 	{
 		res = s[j];
-		s[j] = s[count - 1 -j];
-		s[count - 1 -j] = res;
+		s[j] = s[count - 1 - j];
+		s[count - 1 - j] = res;
 	}
 }
