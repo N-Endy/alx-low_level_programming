@@ -22,10 +22,12 @@ void rev_string(char *s)
 
 	/* Use length to print starting from back */
 	for (j = count - 1; j >= 0; j--)
+	{
 		for (k = 0; k <= count - 1; k++)
 		{
 			res = s[k];
 			s[k] = s[j];
 			s[j] = res;
 		}
+	}
 }
