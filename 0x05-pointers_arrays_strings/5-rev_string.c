@@ -10,7 +10,7 @@ void rev_string(char *s)
 {
 	int count = 0;
 	int i = 0;
-	int j, k;
+	int j;
 	char res;
 
 	/* Get the length of the string */
@@ -20,14 +20,11 @@ void rev_string(char *s)
 		i++;
 	}
 
-	/* Use length to print starting from back */
-	for (j = count - 1; j >= 0; j--)
+	/* Use half of its length to print starting from back */
+	for (j = 0; j <= (count - 1) / 2; j++)
 	{
-		for (k = 0; k <= count - 1; k++)
-		{
-			res = s[k];
-			s[k] = s[j];
-			s[j] = res;
-		}
+		res = s[j];
+		s[j] = s[count - 1 -j];
+		s[count - 1 -j] = res;
 	}
 }
