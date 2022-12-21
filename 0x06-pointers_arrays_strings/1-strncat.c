@@ -12,13 +12,19 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
 
-	/* Get the length of the dest string */
-	for (i = 0; dest[i] != '\0'; i++)
-		;
+	/**
+	 * Checks if there are no null bytes in first n
+	 * bytes of src
+	 */
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
 
-	/* Add src string to dest starting from end of dest */
-	for (j = 0; j <= n; j++)
-		dest[i++] = src[j];
+	/**
+	 * If i is still less than n, it writes additional
+	 * null bytes
+	 */
+	for ( ; i < n; i++)
+		dest[i] = '\0';
 
 	return (dest);
 }
