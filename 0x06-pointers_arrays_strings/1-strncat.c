@@ -4,10 +4,11 @@
  * _strncat - Concatenates two strings
  * @src: First string
  * @dest: Destination string to be concatenated with
+ * @n: n bytes
  *
  *Return: Retuns a string containing words from previous two
  */
-char *_strncat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
 
