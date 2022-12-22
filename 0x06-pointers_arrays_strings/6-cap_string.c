@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * string_toupper - Changes all lowercase to uppercase
+ * cap_string- Capitalizes all the words of a string
  * @str: pointer to the string
  *
- * Return: Returns the string in all uppercase letters
+ * Return: Returns all words capitalized
  */
-char *string_toupper(char *str)
+char *cap_string(char *str)
 {
 	int i = 0, j;
 	int sep[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40,
