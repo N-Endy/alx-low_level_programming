@@ -8,13 +8,20 @@
  */
 char *rot13(char *str)
 {
-	int i;
+	int i, j;
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxzyabcdefghijlmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		/* Checks if char is a letter */
-		if ((str[i] > 96 && str[i] < 123) || (str[i] > 64 && str[i] < 91))
-			str[i] = str[i] + 13;
+		for (j = 0; j < 52; j++)
+		{
+			if (str[i] == alphabet[j])
+			{
+				str[i] = rot13[j];
+				break;
+			}
+		}
 	}
 
 	return (str);
