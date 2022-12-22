@@ -24,6 +24,7 @@ char *cap_string(char *str)
 				/* Checks if char is a lowercase */
 				if (str[i] > 96 && str[i] < 123)
 				str[i] = str[i] - 32;
+				break;
 			}
 		}
 	}
