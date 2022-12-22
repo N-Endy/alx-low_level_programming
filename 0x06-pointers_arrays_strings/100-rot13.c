@@ -8,14 +8,13 @@
  */
 char *rot13(char *str)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		/* Checks if char is a letter */
-		if ((str[i] > 96 && str[i] < 123) || (str[i] > 64) && str[i] < 91)
+		if ((str[i] > 96 && str[i] < 123) || (str[i] > 64 && str[i] < 91))
 			str[i] = str[i] + 13;
-		i++;
 	}
 
 	return (str);
