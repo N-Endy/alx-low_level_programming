@@ -1,25 +1,24 @@
 #include "main.h"
 
 /**
- * leet - encodes a string into 1337
- * @str: the string to be encoded
+ * rot13 - Changes all lowercase to uppercase
+ * @str: pointer to the string
  *
- * Return: Returns the encoded string
+ * Return: Returns the string in coded format
  */
-char *leet(char *str)
+char *rot13(char *str)
 {
 	int i, j;
-	char lowercase[] = {'a', 'e', 'o', 't', 'l'};
-	char uppercase[] = {'A', 'E', 'O', 'T', 'L'};
-	char number[] = {52, 51, 48, 55, 49}
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxzyabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; j < 52; j++)
 		{
-			if (str[i] == lowercase[j] || str[i] == uppercase[j])
+			if (str[i] == alphabet[j])
 			{
-				str[i] = number[j];
+				str[i] = rot13[j];
 				break;
 			}
 		}
