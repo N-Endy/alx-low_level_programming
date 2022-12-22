@@ -1,42 +1,30 @@
 #include "main.h"
-
 /**
- * cap_string - Capitalizes all the words of a string
- * @str: pointer to the string
- *
- * Return: Returns all words capitalized
+ * cap_string - capitalizes all words of a string
+ * @s: input string.
+ * Return: the pointer to dest.
  */
-char *cap_string(char *str)
+
+char *cap_string(char *s)
 {
-	int i = 0, j;
-	int sep[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40,
-		41, 123, 125};
+	int count = 0, i;
+	int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	if (*str[0] > 96 && *str[0] < 123)
-		*str[0] = *str[0] - 32;
-
-<<<<<<< HEAD
-	for (i = 1; *str[i] != '\0'; i++)
+	if (*(s + count) >= 97 && *(s + count) <= 122)
+		*(s + count) = *(s + count) - 32;
+	count++;
+	while (*(s + count) != '\0')
 	{
-		for (j = 0; j < 13; j++)
+		for (i = 0; i < 13; i++)
 		{
-			if (*str[i] == sep[j])
-=======
-	while (str[i] != '\0')
-	{
-		for (j = 0; j < 13; j++)
-		{
-			if (sep[j] == str[i])
->>>>>>> parent of a32fcf1... Change to for loop
+			if (*(s + count) == sep_words[i])
 			{
-				/* Checks if char is a lowercase */
-				if (*str[i] > 96 && *str[i] < 123)
-				*str[i] = *str[i] - 32;
+				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+					*(s + (count + 1)) = *(s + (count + 1)) - 32;
 				break;
 			}
 		}
-		i++;
+		count++;
 	}
-
-	return (str);
+	return (s);
 }
