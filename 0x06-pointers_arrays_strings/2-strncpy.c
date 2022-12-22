@@ -6,11 +6,11 @@
  * @dest: Destination string to be copied to
  * @n: number of bytes from src
  *
- *Return: Retuns the string dest
+ * Return: Returns the string dest
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j;
+	int i;
 
 	/**
 	 * Checks if there are no null bytes in first n
