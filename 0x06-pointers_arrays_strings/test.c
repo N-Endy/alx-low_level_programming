@@ -1,29 +1,25 @@
 #include "main.h"
 
 /**
- * cap_string - Capitalizes all the words of a string
- * @str: pointer to the string
+ * leet - encodes a string into 1337
+ * @str: the string to be encoded
  *
- * Return: Returns all words capitalized
+ * Return: Returns the encoded string
  */
-char *cap_string(char *str)
+char *leet(char *str)
 {
 	int i, j;
-	int sep[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40,
-		41, 123, 125};
+	char lowercase[] = {'a', 'e', 'o', 't', 'l'};
+	char uppercase[] = {'A', 'E', 'O', 'T', 'L'};
+	char number[] = {52, 51, 48, 55, 49}
 
-	if (str[0] > 96 && str[0] < 123)
-		str[0] = str[0] - 32;
-
-	for (i = 1; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 13; j++)
+		for (j = 0; j < 5; j++)
 		{
-			if (str[i] == sep[j])
+			if (str[i] == lowercase[j] || str[i] == uppercase[j])
 			{
-				/* Checks if char is a lowercase */
-				if (str[i] > 96 && str[i] < 123)
-				str[i] = str[i] - 32;
+				str[i] = number[j];
 				break;
 			}
 		}
