@@ -10,7 +10,7 @@ char *string_toupper(char *str)
 {
 	int i = 0;
 
-	while (str != '\0')
+	while (str[i] != '\0')
 	{
 		/* Checks if char is a small letter */
 		if (str[i] > 96 && str[i] < 123)
