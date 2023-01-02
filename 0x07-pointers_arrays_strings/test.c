@@ -1,23 +1,22 @@
 #include "main.h"
 
 /**
- * _memset - Fills memory with a constant byte
- * @s: string whose memory is pointed at
- * @b: the constant byte to be filled
- * @n: number of n bytes to be filled of memory area
+ * _strspn - Gets the length of a prefix substring
+ * @s: String to search
+ * @accept: Characters s must contain
  *
- * Return: Returns a pointer to the memory area s
+ * Return: the legth of the prefix substring
  */
 
-char *_memset(char *s, char b, unsigned int n)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i;
+	unsigned int i, j, len = 0;
 
-	while (i < n)
-	{
-		*(s + i) = b;
-		i++;
-	}
-	
-	return (s);
+	for (i = 0; s[i] != '\0'; i++)
+		for (j = 0; accept[j] != '\0'; j++)
+			if (accept[j] == s[i])
+				len++;
+		break;
+
+	return (len);
 }
