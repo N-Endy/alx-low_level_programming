@@ -7,7 +7,7 @@
  * Return: Returns 0 or 1 if the number is a prime or not
  */
 
-int _is_prime_number(int n)
+int is_prime_number(int n)
 {
 	return is_prime_recursive(n, 2);
 }
