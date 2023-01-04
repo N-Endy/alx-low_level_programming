@@ -43,7 +43,7 @@ int is_palindrome_recursion(char *s, int len)
 	if (len <= 1)
 		return (1);
 	/* Checks if the first and last characters are equal */
-	if (s[0] != s[length - 1])
+	if (s[0] != s[len - 1])
 		return (0);
 	/* Checks the rest of the string */
 	return (is_palindrome_recursion((s + 1), length - 2));
