@@ -9,7 +9,7 @@
 
 int is_prime_number(int n)
 {
-	return is_prime_recursive(n, 2);
+	return (is_prime_recursive(n, 2));
 }
 
 /**
@@ -22,8 +22,10 @@ int is_prime_number(int n)
 
 int is_prime_recursive(int n, int div)
 {
-	if (n <= 2)
+	if (n == 2)
 		return (1);
+	if (n == 0 || n == 1 || n < 0)
+		return (0);
 
 	if (n % div == 0)
 		return (0);
