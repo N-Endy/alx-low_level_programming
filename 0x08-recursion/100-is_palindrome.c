@@ -46,5 +46,5 @@ int is_palindrome_recursion(char *s, int len)
 	if (s[0] != s[len - 1])
 		return (0);
 	/* Checks the rest of the string */
-	return (is_palindrome_recursion((s + 1), length - 2));
+	return (is_palindrome_recursion((s + 1), len - 2));
 }
