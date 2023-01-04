@@ -29,6 +29,8 @@ int is_prime_recursive(int n, int div)
 
 	if (n % div == 0)
 		return (0);
+	else
+		return (1);
 
 	return (is_prime_recursive(n, div + 1));
 }
