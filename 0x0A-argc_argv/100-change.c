@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	{
 		int value = coins[i]; /* Get current coin value */
 
-		while (cent >= value)
+		while (cents >= value)
 		{
 			cents -= value;
 			num_coins++;
