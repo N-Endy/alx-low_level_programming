@@ -9,42 +9,30 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int cents, ncoins = 0;
 
-	/* Number of arguments not exactly 1 */
-	if (argc != 2)
+	if (argc == 1 || argc > 2)
 	{
-		printf("Error\n");
-		return (1);
+	printf("Error\n");
+	return (1);
 	}
-	/* Amount of cents to give back */
-	int cents = atoi(argv[1]);
 
-	/* Amount is negative*/
-	if (cents < 0)
+	cents = atoi(argv[1]);
+
+	while (cents > 0)
 	{
-		printf("0\n");
-		return (0);
+	if (cents >= 25)
+		cents -= 25;
+	else if (cents >= 10)
+		cents -= 10;
+	else if (cents >= 5)
+		cents -= 5;
+	else if (cents >= 2)
+		cents -= 2;
+	else if (cents >= 1)
+		cents -= 1;
+	ncoins += 1;
 	}
-	/* Array to store value of coins */
-	int coins[] = {25, 10, 5, 2, 1};
-
-	/* Variables to store the number of coins of each value */
-	int num_coins = 0;
-	int num_values = sizeof(coins) / sizeof(int); /* number of coin value */
-
-	/* Iterate through coin array */
-	for (i = 0; i < num_values; i++)
-	{
-		int value = coins[i]; /* Get current coin value */
-
-		while (cents >= value)
-		{
-			cents -= value;
-			num_coins++;
-		}
-	}
-	/* Print the total number of coins */
-	printf("%d\n", num_coins);
+	printf("%d\n", ncoins);
 	return (0);
 }
