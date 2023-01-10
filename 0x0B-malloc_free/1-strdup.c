@@ -27,7 +27,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/* iterates through initial string and copy to duplicate */
-	for (j = 0; j < i; j++)
+	for (i = 0; str[i] != '\0'; i++)
 		str_cpy[i] = str[i];
 	return (str_cpy);
 }
