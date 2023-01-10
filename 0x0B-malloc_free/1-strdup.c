@@ -12,14 +12,14 @@ char *_strdup(char *str)
 	char *str_cpy;
 	unsigned int i;
 
+	/* checks if initial string is empty */
+	if (str == NULL)
+		return (NULL);
+
 	/* get the length of str */
 	for (i = 0; str[i]; i++)
 		;
 	i++;
-
-	/* checks if initial string is empty */
-	if (str == NULL)
-		return (NULL);
 
 	/* allocates memory space for duplicate */
 	str_cpy = malloc(sizeof(char) * i);
