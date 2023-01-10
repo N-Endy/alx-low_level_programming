@@ -10,11 +10,12 @@
 char *_strdup(char *str)
 {
 	char *str_cpy;
-	int i;
+	unsigned int i;
 
 	/* get the length of str */
 	for (i = 0; str[i]; i++)
 		;
+	i++;
 
 	/* checks if initial string is empty */
 	if (str == NULL)
