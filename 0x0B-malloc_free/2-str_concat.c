@@ -41,7 +41,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 
 	/* concatinate both strings */
-	for (k = 0; l < i; k++)
+	for (k = 0; k < i; k++)
 		_concat[k] = s1[k];
 	for (k = 0; k < j; k++)
 		_concat[k + i] = s2[k];
