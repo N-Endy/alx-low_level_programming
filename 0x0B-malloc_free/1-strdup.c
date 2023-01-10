@@ -23,6 +23,6 @@ char *_strdup(char *str)
 
 	/* iterates through initial string and copy to duplicate */
 	for (i = 0; str[i] != '\0'; i++)
-		str_copy[i] = str[i];
+		str_cpy[i] = str[i];
 	return (str_cpy);
 }
