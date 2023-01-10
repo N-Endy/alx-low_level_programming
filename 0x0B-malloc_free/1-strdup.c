@@ -21,7 +21,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/* allocates memory space for duplicate */
-	str_cpy = (char *) malloc(sizeof(*str) * i);
+	str_cpy = (char *) malloc(sizeof(char) * i);
 	if (str_cpy == NULL)
 		return (NULL);
 
