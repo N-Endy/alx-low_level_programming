@@ -14,20 +14,33 @@ char *str_concat(char *s1, char *s2)
 	int i, j, len;
 	char *_concat;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	/**
+	 * take strings as empty string if NULL and check length if
+	 * not NULL
+	 */
+	if (s1 == NULL)
+		i = 0;
+	else
+	{
+		for (i = 0; s1[i]; i++)
+		;
+	}
 
-	/* get length of strings */
-	for (i = 0; s1[i]; i++)
+	if (s2 == NULL)
+		j = 0;
+	else
+	{
+		for (j = 0; s2[j]; j++)
 		;
-	for (j = 0; s2[j]; j++)
-		;
+	}
 	len = i + j + 1;
 
+	/* allocate memory space */
 	_concat = malloc(sizeof(char) * len);
 	if (_concat == NULL)
 		return (NULL);
 
+	/* concatinate both strings */
 	for (i = 0; s1[i] != '\0'; i++)
 		_concat[i] = s1[i];
 	for (j = 0; s2[j]; j++)
