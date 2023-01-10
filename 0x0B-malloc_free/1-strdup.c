@@ -10,7 +10,7 @@
 char *_strdup(char *str)
 {
 	char *str_cpy;
-	int i;
+	int i, j;
 
 	/* get the length of str */
 	for (i = 0; str[i]; i++)
@@ -21,12 +21,12 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/* allocates memory space for duplicate */
-	str_cpy = (char *) malloc(sizeof(char) * i);
+	str_cpy = malloc(sizeof(char) * i);
 	if (str_cpy == NULL)
 		return (NULL);
 
 	/* iterates through initial string and copy to duplicate */
-	for (i = 0; str[i] != '\0'; i++)
+	for (j = 0; j < i; j++)
 		str_cpy[i] = str[i];
 	return (str_cpy);
 }
