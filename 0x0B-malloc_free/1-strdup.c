@@ -10,11 +10,7 @@
 char *_strdup(char *str)
 {
 	char *str_cpy;
-<<<<<<< HEAD
 	unsigned int i;
-=======
-	int i, j;
->>>>>>> fea31cfb6be7ba9d15cc9dea6c29662820838836
 
 	/* get the length of str */
 	for (i = 0; str[i]; i++)
