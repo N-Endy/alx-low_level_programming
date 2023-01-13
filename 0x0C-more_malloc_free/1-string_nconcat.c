@@ -13,8 +13,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int len1, len2;
-	unsigned int i;
+	unsigned int len1, len2, i;
 
 	/* return NULL if string is empty */
 	if (s1 == NULL || s2 == NULL)
@@ -26,32 +25,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; s2[i]; i++)
 		len2++;
 
-	/* copies ull string if n is greater or equal len2 */
+	/* copies all string if n is greater or equal len2 */
 	if (n >= len2)
-	{
-		ptr = malloc(len1 + len2 + 1);
+		len2 = n;
+	ptr = malloc(len1 + len2 + 1);
 
-		if (ptr == NULL)
-			return (NULL);
+	if (ptr == NULL)
+		return (NULL);
 
-		for (i = 0; i < len1; i++)
-			ptr[i] = s1[i];
-		for (i = 0; s2[i]; i++)
-			ptr[len1 + i] = s2[i];
-		ptr[len1 + i] = '\0';
-	}
-	else if (n < len2 && n > 0)
-	{
-		ptr = malloc(len1 + n + 1);
-		if (ptr == NULL)
-			return (NULL);
-
-		for (i = 0; s1[i]; i++)
-			ptr[i] = s1[i];
-		for (i = 0; i < n; i++)
-			ptr[len1 + i] = s2[i];
-		ptr[len1 + i] = '\0';
-	}
+	for (i = 0; i < len1; i++)
+		ptr[i] = s1[i];
+	for (i = 0; s2[i]; i++)
+		ptr[len1 + i] = s2[i];
+	ptr[len1 + i] = '\0';
 
 	return (ptr);
 }
