@@ -19,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len1 = 0;
 	else
 	{
-		for (len1 = 0; s1[len2]; len1++)
+		for (len1 = 0; s1[len1]; len1++)
 			;
 	}
 	if (s2 == NULL)
