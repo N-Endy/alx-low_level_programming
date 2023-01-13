@@ -18,13 +18,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL)
 		len1 = 0;
 	else /* get length of strings */
-		for (i = 0; s1[i]; i++)
-			len1;
+		for (len1 = 0; s1[i]; i++)
+			;
 	if (s2 == NULL)
 		len2 = 0;
 	else /* get length of string */
-		for (i = 0; s2[i]; i++)
-			len2++;
+		for (len2 = 0; s2[i]; i++)
+			;
 
 	/* copies all string if n is greater or equal len2 */
 	if (n >= len2)
