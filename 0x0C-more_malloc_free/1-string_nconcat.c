@@ -29,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	/* copies all string if n is greater or equal len2 */
 	if (n >= len2)
 		len2 = n;
-	ptr = malloc(len1 + len2 + 1);
+	ptr = malloc(sizeof(char) * (len1 + len2 + 1));
 
 	if (ptr == NULL)
 		return (NULL);
