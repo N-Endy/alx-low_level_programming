@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * string_nconcat - Concatenates 2 strings using n number of bytes
@@ -40,6 +41,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			ptr[i + j] = s2[j];
 	}
 
-	free(ptr);
 	return (ptr);
+}
+
+int main(void)
+{
+	char *concat;
+
+	concat = string_nconcat("Best ", "School !!!", 6);
+	printf("%s\n", concat);
+	free(concat);
+	return (0);
 }
