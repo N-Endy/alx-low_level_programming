@@ -15,14 +15,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ptr;
 	unsigned int len1, len2, i;
 
-	/* return NULL if string is empty */
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-
-	/* get length of strings */
-	for (i = 0; s1[i]; i++)
-		len1++;
-	for (i = 0; s2[i]; i++)
+	if (s1 == NULL)
+		len1 = 0;
+	else /* get length of strings */
+		for (i = 0; s1[i]; i++)
+			len1++;
+	if (s2 == NULL)
+		len2 = 0;
+	else /* get length of string */
+		for (i = 0; s2[i]; i++)
 		len2++;
 
 	/* copies all string if n is greater or equal len2 */
