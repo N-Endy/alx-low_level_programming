@@ -2,25 +2,21 @@
 #include <stdio.h>
 
 /**
- * print_list - prints all the elements of a list_t list
- * @h: list to print
- *
- * Return: Returns a list of element in the node
- */
-
+* print_list - prints all the elements of a list_t list
+* @h: pointer to the start of the list
+*
+* Return: number of nodes in the list
+*/
 size_t print_list(const list_t *h)
 {
-	size_t n = 0;
-	list_t node = h;
-	
-	// traseverse nodes
-	while (node != NULL)
+	unsigned int i;
+	const list_t *tmp;
+
+	tmp = h;
+	for (i = 0; tmp; i++)
 	{
-		printf("[%u] %s\n", node->len, node->str);
-
-		n++;
-		node = node->next;
+		printf("[%u] %s\n", tmp->len, tmp->str);
+		tmp = tmp->next;
 	}
-
-	return (n);
+	return (i);
 }
