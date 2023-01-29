@@ -16,10 +16,7 @@ size_t print_list(const list_t *h)
 	// traseverse nodes
 	while (node != NULL)
 	{
-		if (node->str == NULL)
-			printf("[%u] %s\n", 0, "(nil)");
-		else
-			printf("[%u] %s\n", node->len, node->str);
+		printf("[%u] %s\n", node->len, node->str);
 
 		n++;
 		node = node->next;
