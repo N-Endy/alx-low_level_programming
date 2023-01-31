@@ -2,31 +2,41 @@
 
 /**
  * find_listint_loop - finds the loop in a linked list.
- * @head: pointer to the beginning of the list
+ * @head: head of a list.
  *
- * Return: address of the node where the loop starts or NULL if there's no loop
+ * Return: the address of the node where the loop starts.
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *one, *two;
+	listint_t *p2;
+	listint_t *prev;
 
-	one = two = head;
-	while (one && two && two->next)
+	p2 = head;
+	prev = head;
+	while (head && p2 && p2->next)
 	{
-		one = one->next;
-		two = two->next->next;
-		if (one == two)
+		head = head->next;
+		p2 = p2->next->next;
+
+		if (head == p2)
 		{
-			one = head;
-			break;
+			head = prev;
+			prev =  p2;
+			while (1)
+			{
+
+				p2 = prev;
+				while (p2->next != head && p2->next != prev)
+				{
+					p2 = p2->next;
+				}
+				if (p2->next == head)
+					break;
+
+				head = head->next;
+			}
+			return (p2->next);
 		}
 	}
-	if (!one || !two || !two->next)
-		return (NULL);
-	while (one != two)
-	{
-		one = one->next;
-		two = two->next;
-	}
-	return (two);
+	return (NULL);
 }
