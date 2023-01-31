@@ -12,29 +12,31 @@
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i, j;
-	char *string;
-	va_list strings;
+	va_list args;
+	unsigned int i = 0;
+	char *temp;
 
-	va_start(strings, n);
-	for (i = 0; i < n; i++)
+	if (n <= 0 || !n)
+		return;
+
+	va_start(args, n);
+	for (; i < n; i++)
 	{
-		string = va_arg(strings, char *);
-		if (string)
-			printf("%s", string);
+		temp = va_arg(args, char *);
+		if (temp)
+			printf("%s", temp);
 		else
 			printf("(nil)");
-		if (i < (n - 1) && separator)
+		if (separator && i < n - 1)
 			printf("%s", separator);
 	}
-
-	va_end(strings);
 	printf("\n");
+	va_end(args);
 }
 
 
 int main(void)
 {
-    print_strings(", ", 2, "Jay", "Django");
+    print_strings(", ", "Jay", "Django");
     return (0);
 }
