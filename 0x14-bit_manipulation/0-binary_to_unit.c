@@ -1,13 +1,14 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * binary_to_unit - Converts a binary number to an unsigned int
+ * binary_to_uint - Converts a binary number to an unsigned int
  * @b: A string of chars
  *
  * Return: Returns an unsigned int
  */
-unsigned int binary_to_unit(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
 	int len, i;
 	unsigned int result = 0;
@@ -34,4 +35,4 @@ unsigned int binary_to_unit(const char *b)
 	}
 
 	return (result);
-}
+
